@@ -3,7 +3,6 @@ package blocks;
 import helper.CustomUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import pages.BasePage;
 import pages.ProductsPage;
 
 public class MenuBlock {

@@ -20,15 +20,6 @@ public class ModalPopUpPurchasePage extends BasePage {
         return this;
     }
 
-    public boolean checkThatPopUpAppears() {
-        try {
-            waitUntilVisible(contentWrapper, 5);
-            return true;
-        } catch (TimeoutException e) {
-            return false;
-        }
-    }
-
     public String getPopUpTitle() {
         return findElement(popUpTitleLocator).getText().trim();
     }

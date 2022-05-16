@@ -89,20 +89,10 @@ public abstract class BasePage {
         scrollIntoView(element);
         element.click();
     }
-    public WebElement waitAndScroll(By locator) {
-        WebElement element = waitForElementToBePresent(locator, secondsToWaitElement);
-        scrollIntoView(element);
-       return element;
-    }
 
     public WebElement waitForElementToBePresent(By locator, int seconds) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(seconds))
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    public void waitUntilPageLoadedCompletely(int seconds) {
-        System.out.print( getJsExecutor().executeScript("return document.readyState"));
-        new WebDriverWait(getDriver(), Duration.ofSeconds(seconds))
-                .until(driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete"));
-    }
 }

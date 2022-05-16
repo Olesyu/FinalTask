@@ -65,8 +65,4 @@ public class ShoppingCartElement {
         this.total = CustomUtils.getPriceValueFromString(this.totalString);
     }
 
-    public boolean checkIfDiscountedPriceCalculatesCorrectly() {
-        double calculatedDiscountPrice = CustomUtils.getDiscountedPriceOnPercentage(this.regularPrice, this.discount);
-        return CustomUtils.checkDoubleEquals(calculatedDiscountPrice, this.price);
-    }
 }
